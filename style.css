@@ -1,0 +1,167 @@
+	body, html {
+		color: #201C27;
+		margin: 0;
+		padding: 0;
+		background: #E2D49A;
+	}
+	.main {
+		width: 100%;
+		max-width: 1450px;
+		padding: 1%;
+		margin: 0 auto;
+		background: #EDE4BF;
+	}
+	h2 {
+		color: #4F4761;
+	}
+	h3 {
+		color: #6A6E91;
+	}
+	.clearfix:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+	.plain-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	input[type=text] {
+		margin: .25em 1em;
+	}
+	input[type=button]{
+		border: none;
+	}
+	legend {
+		font-weight: bold;
+	}
+	.live-site {
+		display: none;
+	}
+	.input-group {
+		overflow: hidden;
+		width: 550px;
+	}
+	.paper-group > .input-group {
+		width: 300px;
+	}
+	.paper-group .paper-info > label {
+		width: 70px;
+		display: inline-block;
+	}
+	.paper-group .paper-info >  input[type=text] {
+		width: 350px;
+	}
+	.input-group label {
+		float: right;
+		font-weight: bold;
+		padding: 3px 5px 3px 0;
+		border: solid 1px #EDE4BF;
+	}
+	.form-buttons {
+		width: 100%;
+		overflow: hidden;
+	}
+	.textarea-group,
+	.alts-group {
+		width: 100%;
+		overflow: hidden;
+	}
+	.positive {
+		background: rgba(33, 156, 64, .75);
+	}
+	.negative {
+		background: rgba(189, 25, 35, .75);
+	}
+	.neutral {
+		background: rgba(233, 190, 16, .75);
+	}
+	.textarea-group textarea {
+		float: left;
+		margin-right: 1.5em;
+	}
+	label {
+		font-weight: bold;
+	}
+	.help-text {
+		font-weight: lighter;
+		font-size: 10px;
+		margin: 0;
+		padding: 0;
+	}
+	.alts-group input[type=text] {
+		width: 420px;
+	}
+	fieldset {
+		border-bottom: none;
+		border-left: none;
+		border-right: none;
+	}
+	.browsers {
+		width: 100%;
+		margin: 5px 0;
+		overflow: hidden;
+	}
+	.paper-group {
+		display: block;
+		float: left;
+		width: 32%;
+		margin: 0 5px;
+		padding: 0 5px 12px;
+		border: solid 1px #000;
+	}
+	.btn {
+		text-decoration: none;
+		background: #084874;
+		color: #fff;
+		text-decoration: none;
+		padding: 3px;
+		border: none;
+	}
+	.add-index,
+	.add-paper,
+	.alts-button {
+		float: right;
+		margin: 0 5px 0 0;
+	}
+	.submit {
+		background: #006600;
+		color: #fff;
+		padding: 10px 5px;
+		float: left;
+	}
+	.bold {
+		font-weight: bold;
+	}
+	.output {
+		display: none;
+	}
+	.output .clearfix {
+		border-bottom: 1px solid #4F4761;
+	}
+	.output h2 {
+		color: 
+	}
+	.output .answer {
+		margin: 0 0 20px 2%;
+		overflow: hidden;
+	}
+	.output .answer .checkbox, 
+	.output p {
+		margin: 0 0 0 15px;
+	}
+	.job p {
+		overflow: hidden;
+		width: 100%;
+	}
+	@media print {
+      body {
+          width: 100%;
+          background: #fff;
+          color: #000;
+      }
+      h3, h2 {
+      	color: #000;
+      }
+	}

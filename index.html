@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DPP Proofing for Project Managers</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<div class="main" id="main">
+		<h1>DPP Proofing for Project Managers</h1>
+		<form class="clearfix" id='dpp_proofing' name='dpp_proofing' method='post'>
+			<h2>Job Information</h2>
+			<label>Job Number</label>
+				<input class='jobinfo' 
+					   data-name='Job Number' 
+					   type='text' 
+					   required>
+			<label>Acronym</label>
+				<input class='jobinfo' 
+					   data-name='Acronym' 
+					   type='text' 
+					   required>
+			<label>PM Name</label>
+				<input class='jobinfo' 
+					   data-name='PM Name' 
+					   type='text' 
+					   required>
+			<div class="browsers">
+				<label>
+					<input class='jobinfo'
+						   data-name='Checked in IE: '
+						   value='Yes' 
+						   type='checkbox'>Checked in IE.</label>
+				<label>
+					<input class='jobinfo'
+						   data-name='Checked in Chrome: '
+						   value='Yes,' 
+						   type='checkbox'>Checked in Chrome.</label>
+				<label>
+					<input class='jobinfo'
+						   data-name='Checked in FireFox: '
+						   value='Yes' 
+						   type='checkbox'>Checked in FireFox.</label>
+			</div>
+			<h2>Functionality</h2>
+			<label>
+				<input class='functionality' 
+					   id='liveFunctionality'
+					   data-subarea='functionality' 
+					   data-name='Is the site live?'
+					   value='Yes' 
+					   type='checkbox'>Is the site live?</label>
+			<div id="liveSite" class="live-site">
+				<fieldset>
+					<legend>Analytics</legend>
+					<div class='input-group'>
+						<strong>Analytics is added to the site.</strong>
+						<label class="neutral">
+						<input class='functionality' 
+							   data-subarea='analytics' 
+							   data-name='Analytics is added to the site.'
+							   value='N/A'
+							   type='radio'
+							   name='functionality-analytics' >N/A</label>
+						<label class="negative">
+						<input class='functionality' 
+							   data-subarea='analytics' 
+							   data-name='Analytics is added to the site.'
+							   value='No'
+							   type='radio'
+							   name='functionality-analytics'>No</label>
+						<label class="positive">
+						<input class='functionality' 
+							   data-subarea='analytics' 
+							   data-name='Analytics is added to the site.'
+							   value='Yes'
+							   type='radio'
+							   name='functionality-analytics'>Yes</label>
+					</div> 
+					<div class='input-group'>
+						<strong>Site is registered with Google Analytics.</strong>
+						<label class="neutral">
+						<input class='functionality' 
+							   data-subarea='analytics' 
+							   data-name='Site is registered with Google Analytics.'
+							   value='N/A'
+							   type='radio'
+							   name='analytics-registered' >N/A</label>
+						<label class="negative">
+						<input class='functionality' 
+							   data-subarea='analytics' 
+							   data-name='Site is registered with Google Analytics.'
+							   value='No'
+							   type='radio'
+							   name='analytics-registered'>No</label>
+						<label class="positive">
+						<input class='functionality' 
+							   data-subarea='analytics' 
+							   data-name='Site is registered with Google Analytics.'
+							   value='Yes'
+							   type='radio'
+							   name='analytics-registered' >Yes</label>
+					</div>
+					<div class='alts-group'>
+						<p class="help-text">This information will be used to build an alterations list to give to the PT.</p>
+						<ul class='plain-list alts'>
+							<li class="alt">
+								<input class='functionality' 
+									data-name='Analytics Alts'  
+									data-subarea='analytics'
+									data-type='alts'
+									type='text'>
+								</li>
+							</ul>
+						<input class="alt-btn btn" onClick="addAlt();" type='button' value='Add'>
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>Access</legend>
+					<div class='input-group'>
+						<strong>Logged in as each role</strong>
+						<label class="neutral"><input class='functionality' 
+							   data-subarea='access' 
+							   data-name='Logged in as each role'
+							   name='functionality-role' 
+							   value='N/A'
+							   type='radio'>N/A</label>
+						<label class="negative"><input class='functionality' 
+								data-subarea='access' 
+								data-name='Logged in as each role'
+								name='functionality-role'
+								value='No'
+								type='radio'>No</label>
+						<label class="positive"><input class='functionality' 
+								data-subarea='access' 
+								data-name='Logged in as each role'
+								name='functionality-role' 
+								value='Yes'
+								type='radio'>Yes</label>
+					</div> 
+					<div class='input-group'>
+						<strong>Verified appropriate access</strong>
+						<label class="neutral"><input class='functionality' 
+							   data-subarea='access' 
+							   data-name='Verified appropriate access'
+							   name='functionality-access' 
+							   value='N/A'
+							   type='radio'>N/A</label>
+						<label class="negative"><input class='functionality' 
+							   data-subarea='access' 
+							   data-name='Verified appropriate access'
+							   name='functionality-access'
+							   value='No'
+							   type='radio'>No</label>
+						<label class="positive"><input class='functionality' 
+							   data-subarea='access' 
+							   data-name='Verified appropriate access'
+							   name='functionality-access' 
+							   value='Yes'
+							   type='radio'>Yes</label>
+					</div>
+					<div class='alts-group'>
+						<p class="help-text">This information will be used to build an alterations list to give to the PT.</p>
+						<ul class='plain-list alts'>
+							<li class="alt">
+								<input class='functionality' 
+									data-name='Access Alts' 
+									data-subarea='access'
+									data-type='alts'
+									type='text'>
+								</li>
+							</ul>
+						<input class="alt-btn btn" onClick="addAlt();" type='button' value='Add'>
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>eCommerce</legend>
+					<div class='input-group'>
+						<strong>Rates are correct</strong>
+						<label class="neutral"><input class='functionality' 
+							   data-subarea='ecommerce' 
+							   data-name='Rates are correct'
+							   name='ecomm-rates' 
+							   value='N/A'
+							   type='radio'>N/A</label>
+					<label class="negative"><input class='functionality' 
+							   data-subarea='ecommerce' 
+							   data-name='Rates are correct'
+							   name='ecomm-rates'
+							   value='No'
+							   type='radio'>No</label>
+					<label class="positive"><input class='functionality' 
+							   data-subarea='ecommerce' 
+							   data-name='Rates are correct'
+							   name='ecomm-rates' 
+							   value='Yes'
+							   type='radio'>Yes</label>
+					</div> 
+					<div class='input-group'>
+						<strong>Test Purchase</strong>
+						<label class="neutral"><input class='functionality' 
+							   data-subarea='ecommerce' 
+							   data-name='Test Purchase'
+							   name='ecomm-purchase' 
+							   value='N/A'
+							   type='radio'>N/A</label>
+					<label class="negative"><input class='functionality' 
+							   data-subarea='ecommerce' 
+							   data-name='Test Purchase'
+							   name='ecomm-purchase'
+							   value='No'
+							   type='radio'>No</label>
+					<label class="positive"><input class='functionality' 
+							   data-subarea='ecommerce' 
+							   data-name='Test Purchase'
+							   name='ecomm-purchase' 
+							   value='Yes'
+							   type='radio'>Yes</label>
+					</div>
+					<div class='alts-group'>
+						<p class="help-text">This information will be used to build an alterations list to give to the PT.</p>
+						<ul class='plain-list alts'>
+							<li class="alt">
+								<input class='functionality' 
+									data-name='eCommerce Alts' 
+									data-subarea='ecommerce'
+									data-type='alts'
+									type='text'>
+							</li>
+						</ul>
+						<input class="alt-btn btn" onClick="addAlt();" type='button' value='Add'>
+					</div>
+				</fieldset>
+			</div>
+			<h2>Layout</h2>
+			<fieldset>
+				<legend>Banner</legend>
+				<div class='input-group'>
+					<strong>Art work matches client request</strong>
+					<label class="neutral"><input class='layout' 
+						   data-subarea='banner' 
+						   data-name='Art work matches client request'
+						   name="banner-art"
+						   value='N/A' 
+						   type='radio'>N/A</label>
+					<label class="negative"><input class='layout' 
+						   data-subarea='banner' 
+						   data-name='Art work matches client request'
+						   name="banner-art"
+						   value='No' 
+						   type='radio'>No</label>	
+					<label class="positive"><input class='layout' 
+						   data-subarea='banner' 
+						   name="banner-art"
+						   data-name='Art work matches client request'
+						   value='Yes' 
+						   type='radio'>Yes</label> 
+				</div> 
+				<div class='input-group'>
+					<strong>Spelling is correct</strong>
+					<label class="neutral"><input class='layout' 
+							   data-subarea='banner' 
+							   data-name='Spelling is correct' 
+							   name="banner-spelling"
+							   value='N/A'
+							   type='radio'>N/A</label>
+					<label class="negative"><input class='layout' 
+							   data-subarea='banner' 
+							   data-name='Spelling is correct'
+							   name="banner-spelling" 
+							   value='No'
+							   type='radio'>No</label>
+					<label class="positive"><input class='layout' 
+							   data-subarea='banner' 
+							   data-name='Spelling is correct'
+							   name="banner-spelling" 
+							   value='Yes'
+							   type='radio'>Yes</label>
+				</div> 
+				<div class='input-group'>
+					<strong>Dates are correct</strong>
+					<label class="neutral"><input class='layout' 
+							   data-subarea='banner' 
+							   data-name='Dates are correct' 
+							   name="banner-dates"
+							   value='N/A'
+							   type='radio'>N/A</label>
+					<label class="negative"><input class='layout' 
+							   data-subarea='banner' 
+							   data-name='Dates are correct' 
+							   name="banner-dates"
+							   value='No'
+							   type='radio'>No</label>
+					<label class="positive"><input class='layout' 
+							   data-subarea='banner' 
+							   data-name='Dates are correct' 
+							   name="banner-dates"
+							   value='Yes'
+							   type='radio'>Yes</label>
+				</div> 
+				<div class='input-group'>
+					<strong>Location is correct</strong>
+					<label class="neutral"><input class='layout' 
+							   data-subarea='banner' 
+							   data-name='Location is correct'
+							   name="banner-location" 
+							   value='N/A'
+							   type='radio'>N/A</label>
+					<label class="negative"><input class='layout' 
+							   data-subarea='banner' 
+							   data-name='Location is correct'
+							   name="banner-location" 
+							   value='No'
+							   type='radio'>No</label>
+					<label class="positive"><input class='layout' 
+							   data-subarea='banner' 
+							   data-name='Location is correct'
+							   name="banner-location" 
+							   value='Yes'
+							   type='radio'>Yes</label>
+				</div>
+				<div class='alts-group'>
+					<label>Banner Alts</label>
+					<p class="help-text">This information will be used to build an alterations list to give to the PT.</p>
+					<ul class='plain-list alts'>
+						<li class="alt">
+							<input class='layout'
+								type='text' 
+								data-name='Alt: '  
+								data-subarea='banner'
+								data-type='alts'>
+						</li>
+					</ul>
+					<input class="alt-btn btn" onClick="addAlt();" type='button' value='Add'>
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend>Homepage</legend>
+				<p class='help-text'>Please see the homepage Word document in the job floder.</p>
+				<div class='input-group'>
+					<strong>Homepage image is correct.</strong>
+					<label class="neutral"><input class='layout' 
+						   data-subarea='homepage' 
+						   data-name='Home Page Image'
+						   name="homepage-art"
+						   value='N/A' 
+						   type='radio'>N/A</label>
+					<label class="negative"><input class='layout' 
+						   data-subarea='homepage' 
+						   data-name='Home Page Image'
+						   name="homepage-art"
+						   value='No' 
+						   type='radio'>No</label>	
+					<label class="positive"><input class='layout' 
+						   data-subarea='homepage' 
+						   name="homepage-art"
+						   data-name='Home Page Image'
+						   value='Yes' 
+						   type='radio'>Yes</label> 
+				</div> 
+				<div class='input-group'>
+					<strong>Paragraph formatting is correct.</strong>
+					<label class="neutral"><input class='layout' 
+							   data-subarea='homepage' 
+							   data-name='Paragraph formatting is correct' 
+							   name="paragraph-text"
+							   value='N/A'
+							   type='radio'>N/A</label>
+					<label class="negative"><input class='layout' 
+							   data-subarea='homepage' 
+							   data-name='Paragraph formatting is correct'
+							   name="paragraph-text" 
+							   value='No'
+							   type='radio'>No</label>
+					<label class="positive"><input class='layout' 
+							   data-subarea='homepage' 
+							   data-name='Paragraph formatting is correct'
+							   name="paragraph-text" 
+							   value='Yes'
+							   type='radio'>Yes</label>
+				</div> 
+				<div class='input-group'>
+					<strong>Text formatting is correct.</strong>
+					<label class="neutral"><input class='layout' 
+							   data-subarea='homepage' 
+							   data-name='Text formatting is correct' 
+							   name="text-formatting"
+							   value='N/A'
+							   type='radio'>N/A</label>
+					<label class="negative"><input class='layout' 
+							   data-subarea='homepage' 
+							   data-name='Text formatting is correct' 
+							   name="text-formatting"
+							   value='No'
+							   type='radio'>No</label>
+					<label class="positive"><input class='layout' 
+							   data-subarea='homepage' 
+							   data-name='Text formatting is correct' 
+							   name="text-formatting"
+							   value='Yes'
+							   type='radio'>Yes</label>
+				</div> 
+				<div class='alts-group'>
+					<label>Homepage Alts</label>
+					<p class="help-text">This information will be used to build an alterations list to give to the PT.</p>
+					<ul class='plain-list alts'>
+						<li class="alt">
+							<input class='layout'
+								type='text' 
+								data-name='Alt: '  
+								data-subarea='homepage'
+								data-type='alts'>
+						</li>
+					</ul>
+					<input class="alt-btn btn" onClick="addAlt();" type='button' value='Add'>
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend>Footer</legend>
+				<div class='input-group'>
+					<strong>Copyright is the correct year.</strong>
+					<label class="neutral"><input class='layout' 
+							   data-subarea='footer' 
+							   data-name='Copyright is the correct year.'
+							   name='footer-copyright' 
+							   value='N/A'
+							   type='radio'>N/A</label>
+					<label class="negative"><input class='layout' 
+							   data-subarea='footer' 
+							   data-name='Copyright is the correct year.'
+							   name='footer-copyright' 
+							   value='No'
+							   type='radio'>No</label>
+					<label class="positive"><input class='layout' 
+							   data-subarea='footer' 
+							   data-name='Copyright is the correct year.'
+							   name='footer-copyright' 
+							   value='Yes'
+							   type='radio'>Yes</label>
+				</div>
+				<div class='input-group'>
+					<strong>Association name is spelled correctly.</strong>
+					<label class="neutral"><input class='layout' 
+							   data-subarea='footer' 
+							   data-name='Association name is spelled correctly.'
+							   name='footer-assoc-name' 
+							   value='N/A'
+							   type='radio'>N/A</label>
+					<label class="negative"><input class='layout' 
+							   data-subarea='footer' 
+							   data-name='Association name is spelled correctly.'
+							   name='footer-assoc-name'
+							   value='No'
+							   type='radio'>No</label>
+					<label class="positive"><input class='layout' 
+							   data-subarea='footer' 
+							   data-name='Association name is spelled correctly.'
+							   name='footer-assoc-name' 
+							   value='Yes'
+							   type='radio'>Yes</label>
+				</div>
+				<div class='alts-group'>
+					<label>Footer Alts</label>
+					<p class="help-text">This information will be used to build an alterations list to give to the PT.</p>
+					<ul class='plain-list alts'>
+						<li class="alt">
+							<input class='layout' 
+									type='text'
+									data-subarea='footer' 
+									data-name='Alt: '
+									data-type='alts'>
+						</li>
+					</ul>
+					<input class="alt-btn btn" onClick="addAlt();" type='button' value='Add'>
+				</div>
+			</fieldset>
+
+			<h2>Navigation</h2>
+			<fieldset>
+				<legend>Top Navigation</legend>
+				<div class='input-group'>
+					<strong>Spelling is correct</strong>
+					<label class="neutral"><input class='navigation' 
+							   data-subarea='tn' 
+							   data-name='Spelling is correct'
+							   name='navigation-spelling' 
+							   value='N/A'
+							   type='radio'>N/A</label>
+					<label class="negative"><input class='navigation' 
+							   data-subarea='tn' 
+							   data-name='Spelling is correct'
+							   name='navigation-spelling'
+							   value='No'
+							   type='radio'>No</label>
+					<label class="positive"><input class='navigation' 
+							   data-subarea='tn' 
+							   data-name='Spelling is correct'
+							   name='navigation-spelling' 
+							   value='Yes'
+							   type='radio'>Yes</label>
+				</div>
+				<div class='input-group'>
+					<strong>Links work go to the correct page</strong>
+					<label class="neutral"><input class='navigation' 
+							   data-subarea='tn' 
+							   data-name='Links work go to the correct page'
+							   name='tn-links' 
+							   value='N/A'
+							   type='radio'>N/A</label>
+					<label class="negative"><input class='navigation' 
+							   data-subarea='tn' 
+							   data-name='Links work go to the correct page'
+							   name='tn-links'
+							   value='No'
+							   type='radio'>No</label>
+					<label class="positive"><input class='navigation' 
+							   data-subarea='tn' 
+							   data-name='Links work go to the correct page'
+							   name='tn-links' 
+							   value='Yes'
+							   type='radio'>Yes</label>
+				</div>
+				<div class='input-group'>
+					<strong>Indices match the client's request</strong>
+					<label class="neutral"><input class='navigation' 
+							   data-subarea='tn' 
+							   data-name="Indices match the client's request"
+							   name='indices-match' 
+							   value='N/A'
+							   type='radio'>N/A</label>
+					<label class="negative"><input class='navigation' 
+							   data-subarea='tn' 
+							   data-name="Indices match the client's request"
+							   name='indices-match'
+							   value='No'
+							   type='radio'>No</label>
+					<label class="positive"><input class='navigation' 
+							   data-subarea='tn' 
+							   data-name="Indices match the client's request"
+							   name='indices-match' 
+							   value='Yes'
+							   type='radio'>Yes</label>
+				</div>
+				<div class='alts-group'>
+					<label>Navigation Alts</label>
+					<p class="help-text">This information will be used to build an alterations list to give to the PT.</p>
+					<ul class='plain-list alts'>
+						<li class="alt">
+							<input class='navigation' 
+									type='text'
+									data-subarea='tn' 
+									data-name='Alt: '
+									data-type='alts'>
+						</li>
+					</ul>
+					<input class="alt-btn btn" onClick="addAlt();" type='button' value='Add'>
+				</div>
+			</fieldset>
+
+			<fieldset>
+				<legend>Sidebar Navigation</legend>
+				<div class='input-group'>
+					<strong>Section headers match client's provided headers.</strong><p class="help-text">(See Site Information excel.)</p>
+					<label class="neutral"><input class='navigation' 
+							   data-subarea='sn' 
+							   data-name="Section headers match client's provided headers"
+							   name='section-headers' 
+							   value='N/A'
+							   type='radio'>N/A</label>
+					<label class="negative"><input class='navigation' 
+							   data-subarea='sn' 
+							   data-name="Section headers match client's provided headers"
+							   name='section-headers'
+							   value='No'
+							   type='radio'>No</label>
+					<label class="positive"><input class='navigation' 
+							   data-subarea='sn' 
+							   data-name="Section headers match client's provided headers"
+							   name='section-headers' 
+							   value='Yes'
+							   type='radio'>Yes</label>
+					</div>
+					<div class="input-group">
+						<strong>Link text match client provided text.</strong><p class="help-text">(See Site Information excel.)</p>
+						<label class="neutral"><input class='navigation' 
+							   data-subarea='sn' 
+							   data-name='Link text match client provided text.'
+							   name='link-text' 
+							   value='N/A'
+							   type='radio'>N/A</label>
+					<label class="negative"><input class='navigation' 
+							   data-subarea='sn' 
+							   data-name='Link text match client provided text.'
+							   name='link-text'
+							   value='No'
+							   type='radio'>No</label>
+					<label class="positive"><input class='navigation' 
+							   data-subarea='sn' 
+							   data-name='Link text match client provided text.'
+							   name='link-text' 
+							   value='Yes'
+							   type='radio'>Yes</label>
+					</div>
+					<div class="input-group">
+						<strong>Spelling is correct</strong>
+						<label class="neutral"><input class='navigation' 
+							   data-subarea='sn' 
+							   data-name='Spelling is correct'
+							   name='sn-spelling' 
+							   value='N/A'
+							   type='radio'>N/A</label>
+					<label class="negative"><input class='navigation' 
+							   data-subarea='sn' 
+							   data-name='Spelling is correct'
+							   name='sn-spelling'
+							   value='No'
+							   type='radio'>No</label>
+					<label class="positive"><input class='navigation' 
+							   data-subarea='sn' 
+							   data-name='Spelling is correct'
+							   name='sn-spelling' 
+							   value='Yes'
+							   type='radio'>Yes</label>
+
+
+	
+				</div>
+				<div class='textarea-group'>
+					<textarea class='navigation' 
+							  data-name='Copy of Side Navigation links.'
+							  data-subarea='sn'
+						      rows='10' 
+						      cols='50' 
+						      placeholder='Please list the headers and links.'></textarea>
+				</div>
+				<div class='alts-group'>
+					<label>Side Navigation Alts</label>
+					<p class="help-text">This information will be used to build an alterations list to give to the PT.</p>
+					<ul class='plain-list alts'>
+						<li class="alt">
+							<input class='navigation' 
+									type='text'
+									data-name='Alt: '
+									data-subarea='sn'>
+						</li>
+					</ul>
+					<input class="alt-btn btn" onClick="addAlt();" type='button' value='Add'>
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend>Search</legend>
+				<div class='input-group'>
+					<strong>Facets narrow search results.</strong>
+					<label class="neutral"><input class='search'
+							   data-name='Facets narrow search results.'
+							   name='search-facets' 
+							   value='N/A'
+							   type='radio'>N/A</label>
+					<label class="negative"><input class='search'
+							   data-name='Facets narrow search results.'
+							   name='search-facets'
+							   value='No'
+							   type='radio'>No</label>
+					<label class="positive"><input class='search'
+							   data-name='Facets narrow search results.'
+							   name='search-facets' 
+							   value='Yes'
+							   type='radio'>Yes</label>
+				</div> 
+				<div class='input-group'>
+					<strong>IDs are 'on' in Indexes, they show in search.</strong>
+					<label class="neutral"><input class='search'
+							   data-name="IDs are 'on'"
+							   name='search-ids' 
+							   value='N/A'
+							   type='radio'>N/A</label>
+					<label class="negative"><input class='search'
+							   data-name="IDs are 'on'"
+							   name='search-ids'
+							   value='No'
+							   type='radio'>No</label>
+					<label class="positive"><input class='search' 
+							   data-subarea='' 
+							   data-name="IDs are 'on'"
+							   name='search-ids' 
+							   value='Yes'
+							   type='radio'>Yes</label>
+				</div> 
+				<div class='input-group'>
+					<strong>Metadata cloud is displaying in the search results.</strong>
+					<label class="neutral"><input class='search'
+							   data-name='Metadata cloud is displaying in the search results.'
+							   name='search-meta-cloud' 
+							   value='N/A'
+							   type='radio'>N/A</label>
+					<label class="negative"><input class='search'
+							   data-name='Metadata cloud is displaying in the search results.'
+							   name='search-meta-cloud'
+							   value='No'
+							   type='radio'>No</label>
+					<label class="positive"><input class='search'
+							   data-name='Metadata cloud is displaying in the search results.'
+							   name='search-meta-cloud' 
+							   value='Yes'
+							   type='radio'>Yes</label>
+				</div> 
+				<div class='input-group'>
+					<strong>Metadata is useful.</strong>
+					<label class="neutral"><input class='search' 
+							   data-name='Metadata is useful.'
+							   name='search-meta-usefule' 
+							   value='N/A'
+							   type='radio'>N/A</label>
+					<label class="negative"><input class='search' 
+							   data-name='Metadata is useful.'
+							   name='search-meta-usefule'
+							   value='No'
+							   type='radio'>No</label>
+					<label class="positive"><input class='search'
+							   data-name='Metadata is useful.'
+							   name='search-meta-usefule' 
+							   value='Yes'
+							   type='radio'>Yes</label>
+				</div>
+				<div class='textarea-group'>
+					<textarea class='search' 
+							  data-name='Searched for'
+						      rows='10' 
+						      cols='50' 
+						      placeholder='Please list the terms you searched for.'></textarea>
+				</div>
+				<div class='alts-group'>
+					<label>Search Alts</label>
+					<p class="help-text">This information will be used to build an alterations list to give to the PT.</p>
+					<ul class='plain-list alts'>
+						<li class="alt">
+							<input class='search' 
+									type='text'
+									data-name='Alt: '
+									data-type='alts'>
+						</li>
+					</ul>
+					<input class="alt-btn btn" onClick="addAlt();" type='button' value='Add'>
+				</div>
+			</fieldset>
+
+			<h2>Indices</h2>
+			<div id="index-placeholder"></div>
+			<div class="form-buttons">
+				<a id="addIndex" onClick='indexTemplate();' class="btn add-index">Add Index</a>
+				<a id="addPaper" onclick="paperTemplate();" class="btn add-paper">Add Paper</a>
+				<input type='button' id='submitForm' class="submit" value='Submit'>
+			</div>
+			
+		</form>
+		<div class='output' id='output'>
+			<a href="javascript:void(0)" title="Optimized for alts list" id="altsList" class="alts-button btn">Create Alts List</a>
+			<a href="javascript:void(0)" title="Keeps checkbox answers" id="qcList" class="alts-button btn">Full Form</a>
+			<div class="job answer" id="job"></div>
+			<div class="functionality answer" id="functionality"></div>
+			<div class="banner answer" id="banner"></div>
+			<div class="homepage answer" id="homepage"></div>
+			<div class="footer answer" id="footer"></div>
+			<div class="tn answer" id="tn"></div>
+			<div class="sn answer" id="sn"></div>
+			<div class="search answer" id="search"></div>
+			<div class="index answer" id="index"></div>
+		</div>
+	</div>
+				<script id="index-template" type="text/x-handlebars-template">
+				<div class="index-group">
+					<fieldset id="firstIndex">
+						<legend>Index</legend>
+						<div class='clearfix'>
+							<label>Title</label>
+								<input class='index'
+									   type='text'
+									   data-subarea='index'
+									   data-name='Title' required></input>
+						</div>
+						<div class='input-group'>
+										<strong>Order is correct</strong>
+										<label class="neutral"><input class='index' 
+											   data-subarea='index' 
+											   data-name='Order is correct'
+											   name='index-order-{{number}}'
+											   value='N/A'
+											   type='radio'>N/A</label>
+										<label class="negative"><input class='index' 
+											   data-subarea='index' 
+											   data-name='Order is correct'
+											   name='index-order-{{number}}'
+											   value='No'
+											   type='radio'>No</label>
+										<label class="positive"><input class='index' 
+											   data-subarea='index' 
+											   data-name='Order is correct'
+											   name='index-order-{{number}}' 
+											   value='Yes'
+											   type='radio'>Yes</label>
+						</div> 
+						<div class='input-group'>
+										<strong>Spelling is correct</strong>
+										<label class="neutral"><input class='index' 
+											   data-subarea='index' 
+											   data-name='Spelling is correct'
+											   name='index-spelling-{{number}}' 
+											   value='N/A'
+											   type='radio'>N/A</label>
+										<label class="negative"><input class='index' 
+											   data-subarea='index' 
+											   data-name=Spelling is correct''
+											   name='index-spelling-{{number}}'
+											   value='No'
+											   type='radio'>No</label>
+										<label class="positive"><input class='index' 
+											   data-subarea='index' 
+											   data-name='Spelling is correct'
+											   name='index-spelling-{{number}}' 
+											   value='Yes'
+											   type='radio'>Yes</label>
+						</div> 
+						<div class='input-group'>
+										<strong>Correct metadata is visible</strong>
+										<label class="neutral"><input class='index' 
+											   data-subarea='index' 
+											   data-name='Correct metadata is visible'
+											   name='index-meta-{{number}}' 
+											   value='N/A'
+											   type='radio'>N/A</label>
+										<label class="negative"><input class='index' 
+											   data-subarea='index' 
+											   data-name='Correct metadata is visible'
+											   name='index-meta-{{number}}'
+											   value='No'
+											   type='radio'>No</label>
+										<label class="positive"><input class='index' 
+											   data-subarea='index' 
+											   data-name='Correct metadata is visible'
+											   name='index-meta-{{number}}' 
+											   value='Yes'
+											   type='radio'>Yes</label>
+						</div> 
+						<div class='input-group'>
+										<strong>Reflow side menus contain all items</strong>
+										<label class="neutral"><input class='index' 
+											   data-subarea='index' 
+											   data-name='Reflow side menus contain all items'
+											   name='index-reflow-{{number}}' 
+											   value='N/A'
+											   type='radio'>N/A</label>
+										<label class="negative"><input class='index' 
+											   data-subarea='index' 
+											   data-name='Reflow side menus contain all items'
+											   name='index-reflow-{{number}}'
+											   value='No'
+											   type='radio'>No</label>
+										<label class="positive"><input class='index' 
+											   data-subarea='index' 
+											   data-name='Reflow side menus contain all items'
+											   name='index-reflow-{{number}}' 
+											   value='Yes'
+											   type='radio'>Yes</label>
+						</div>
+							<div class='alts-group'>
+											<label>Index Alts</label>
+											<p class="help-text">This information will be used to build an alterations list to give to the PT.</p>
+											<ul class='plain-list alts'>
+												<li class="alt">
+													<input class='index'
+															type='text'
+															data-subarea='index'
+															data-name='Alt: '
+															data-type='alts'>
+												</li>
+											</ul>
+											<input class="alt-btn btn" onClick="addAlt();" type='button' value='Add'>
+							</div><fieldset class='paper-group'>
+					<legend>Paper {{number}}</legend>
+					<div class='paper-info'>
+						<label>Title</label>
+							<input class='index'
+								   type='text'
+								   data-subarea='paper'
+								   data-name='Title' required>
+						<label>Sub Index</label>
+							<input class='index'
+								   type='text'
+								   data-subarea='paper'
+								   data-name='sub-index' required>
+					</div>
+					<div class='input-group'>
+						<strong>Logged In</strong>
+						<label class="neutral"><input class='index' 
+								   data-subarea='paper' 
+								   data-name='Logged In'
+								   name='logged-in-{{number}}' 
+								   value='N/A'
+								   type='radio'>N/A</label>
+						<label class="negative"><input class='index' 
+								   data-subarea='paper' 
+								   data-name='Logged In'
+								   name='logged-in-{{number}}'
+								   value='No'
+								   type='radio'>No</label>
+						<label class="positive"><input class='index' 
+								   data-subarea='paper' 
+								   data-name='Logged In'
+							   name='logged-in-{{number}}' 
+								   value='Yes'
+								   type='radio'>Yes</label>
+					</div>
+					<div class='input-group'>
+						<strong>Full Screen</strong>
+						<label class="neutral"><input class='index' 
+							   data-subarea='paper' 
+							   data-name='Full Screen'
+							   name='paper-full-screen-{{number}}' 
+							   value='N/A'
+							   type='radio'>N/A</label>
+						<label class="negative"><input class='index' 
+							   data-subarea='paper' 
+							   data-name='Full Screen'
+							   name='paper-full-screen-{{number}}'
+							   value='No'
+							   type='radio'>No</label>
+						<label class="positive"><input class='index' 
+							   data-subarea='paper' 
+							   data-name='Full Screen'
+							   name='paper-full-screen-{{number}}' 
+							   value='Yes'
+							   type='radio'>Yes</label>
+					</div> 
+					<div class='input-group'>
+						<strong>Download</strong>
+						<label class="neutral"><input class='index' 
+							   data-subarea='paper' 
+							   data-name='Download'
+							   name='paper-download-{{number}}' 
+							   value='N/A'
+							   type='radio'>N/A</label>
+						<label class="negative"><input class='index' 
+							   data-subarea='paper' 
+							   data-name='Download'
+							   name='paper-download-{{number}}'
+							   value='No'
+							   type='radio'>No</label>
+						<label class="positive"><input class='index' 
+							   data-subarea='paper' 
+							   data-name='Download'
+							   name='paper-download-{{number}}' 
+							   value='Yes'
+							   type='radio'>Yes</label>
+					</div>
+					<div class='alts-group'>
+						<label>Paper Alts</label>
+						<p class="help-text">This information will be used to build an alterations list to give to the PT.</p>
+						<ul class='plain-list alts'>
+							<li class="alt">
+								<input class='index'
+										type='text'
+										data-subarea='paper'
+										data-type='alts'
+										data-name='Alt: '>
+							</li>
+						</ul>
+						<input class="alt-btn btn" onClick="addAlt();" type='button' value='Add'>
+					</div>
+				</fieldset>
+				<div class="paper-placeholder"></div>
+			</fieldset>
+			</div>
+		</script>
+
+			<script id="paper-template" type="text/x-handlebars-template">
+				<fieldset class='paper-group'>
+					<legend>Paper {{number}}</legend>
+					<div class='paper-info'>
+						<label>Title</label>
+							<input class='index'
+								   type='text'
+								   data-subarea='paper'
+								   data-name='Title' required>
+						<label>Sub Index</label>
+							<input class='index'
+								   type='text'
+								   data-subarea='paper'
+								   data-name='sub-index' required>
+					</div>
+					<div class='input-group'>
+						<strong>Logged In</strong>
+						<label class="neutral"><input class='index' 
+								   data-subarea='paper' 
+								   data-name='Logged In'
+								   name='logged-in-{{number}}' 
+								   value='N/A'
+								   type='radio'>N/A</label>
+						<label class="negative"><input class='index' 
+								   data-subarea='paper' 
+								   data-name='Logged In'
+								   name='logged-in-{{number}}'
+								   value='No'
+								   type='radio'>No</label>
+						<label class="positive"><input class='index' 
+								   data-subarea='paper' 
+								   data-name='Logged In'
+							   name='logged-in-{{number}}' 
+								   value='Yes'
+								   type='radio'>Yes</label>
+					</div>
+					<div class='input-group'>
+						<strong>Full Screen</strong>
+						<label class="neutral"><input class='index' 
+							   data-subarea='paper' 
+							   data-name='Full Screen'
+							   name='paper-full-screen-{{number}}' 
+							   value='N/A'
+							   type='radio'>N/A</label>
+						<label class="negative"><input class='index' 
+							   data-subarea='paper' 
+							   data-name='Full Screen'
+							   name='paper-full-screen-{{number}}'
+							   value='No'
+							   type='radio'>No</label>
+						<label class="positive"><input class='index' 
+							   data-subarea='paper' 
+							   data-name='Full Screen'
+							   name='paper-full-screen-{{number}}' 
+							   value='Yes'
+							   type='radio'>Yes</label>
+					</div> 
+					<div class='input-group'>
+						<strong>Download</strong>
+						<label class="neutral"><input class='index' 
+							   data-subarea='paper' 
+							   data-name='Download'
+							   name='paper-download-{{number}}' 
+							   value='N/A'
+							   type='radio'>N/A</label>
+						<label class="negative"><input class='index' 
+							   data-subarea='paper' 
+							   data-name='Download'
+							   name='paper-download-{{number}}'
+							   value='No'
+							   type='radio'>No</label>
+						<label class="positive"><input class='index' 
+							   data-subarea='paper' 
+							   data-name='Download'
+							   name='paper-download-{{number}}' 
+							   value='Yes'
+							   type='radio'>Yes</label>
+					</div>
+					<div class='alts-group'>
+						<label>Paper Alts</label>
+						<p class="help-text">This information will be used to build an alterations list to give to the PT.</p>
+						<ul class='plain-list alts'>
+							<li class="alt">
+								<input class='index'
+										type='text'
+										data-subarea='paper'
+										data-type='alts'
+										data-name='Alt: '>
+							</li>
+						</ul>
+						<input class="alt-btn btn" onClick="addAlt();" type='button' value='Add'>
+					</div>
+				</fieldset>
+			</script>
+	<script type="text/javascript" src="jquery-2.1.0.min.js"></script>
+	<script type="text/javascript" src="handlebars-v1.3.0.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
+
+
