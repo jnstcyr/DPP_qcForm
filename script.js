@@ -11,14 +11,6 @@
 			newAlt = '<li class="alt"><input class="'+className+'" type="text" data-type="alts" data-subarea="'+subarea+'" data-name="Alt: "> </li>';
 		$(altList).append(newAlt);
 	}
-	var sendMail = function() {
-	    var results = dppForm()
-	    	jobinfo = results.jobinfo,
-	    	link = "mailto:pkeller@omnipress.com"
-	             + "&subject=" + escape('DPP qc for '+jobinfo[0]['answer']+' - '+jobinfo[1]['answer'])
-	             + "&body=" + escape('Job Number: '+jobinfo[0]['answer']+'\n Acronym: '+jobinfo[1]['answer']+',\n Completed By: '+ jobinfo[2]['answer'] +'\n Submitted At: '+ new Date());
-		window.location.href = link;
-	}
 	var dppForm = function(event){
 		var myInput = document.getElementById('dpp_proofing').elements,
 			jobinfo = [], functionality =[], layout = [], navigation = [], search = [], indices = [];
